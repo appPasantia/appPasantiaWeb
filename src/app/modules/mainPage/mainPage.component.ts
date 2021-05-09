@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-mainPage',
   templateUrl: './mainPage.component.html',
-  styleUrls: ['../../app.component.scss']
+  styleUrls: []
 })
 export class MainPageComponent implements OnInit {
   showTab1:boolean=true;

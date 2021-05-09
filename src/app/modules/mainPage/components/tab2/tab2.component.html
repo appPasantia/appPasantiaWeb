@@ -5,60 +5,57 @@
 <content padding>
   <div class="centerdiv">
     <form [formGroup]="loginForm" class="centerspace" (ngSubmit)="onResetForm()">
-      <a>
-        <label position="stacked" class="redondeado">Nombre pansatía</label>
-        <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty ||nombre.touched )">
-          <div class="container-error-message" *ngIf="nombre.errors.required">
-            Nombre es requerido
-          </div>
-          <div class="container-error-message" *ngIf="nombre.errors.minlength">
-            Nombre debe tener por lo menos 5 caracteres
-          </div>
-        </div>
 
-        <input formControlName="nombre" type="email" autocapitalize="off" autocomplete="off" autocorrect="off">
-      </a>
-      <a>
-        <label position="stacked">Empresa</label>
-        <div class="alert-danger" *ngIf="empresa.invalid && (empresa.dirty ||empresa.touched )">
-          <div class="container-error-message" *ngIf="empresa.errors.required">
-            Nombre es requerido
-          </div>
-          <div class="container-error-message" *ngIf="nombre.errors.minlength">
-            Nombre debe tener por lo menos 5 caracteres
-          </div>
-        </div>
-        <input formControlName="empresa" type="email" autocapitalize="off" autocomplete="off" autocorrect="off">
-      </a>
+      <mat-form-field >
+        <mat-label>Nombre pansatía</mat-label>
+        <input matInput placeholder="Nombre pansatía"
+          formControlName="nombre"
+          type="email"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
 
-      <a>
-        <label position="stacked">Requisitos</label>
-        <div class="alert-danger" *ngIf="requisistos.invalid && (requisistos.dirty ||requisistos.touched )">
-          <div class="container-error-message" *ngIf="requisistos.errors.required">
-            Requisitos es requerido
-          </div>
-          <div class="container-error-message" *ngIf="requisistos.errors.minlength">
-            Requisitos debe tener por lo menos 5 caracteres
-          </div>
-        </div>
-        <input formControlName="requisistos" type="email" autocapitalize="off" autocomplete="off" autocorrect="off">
-      </a>
+        >
+        <mat-error  *ngIf="nombre.invalid && (nombre.dirty ||nombre.touched )">Nombre es requerido</mat-error>
+        <mat-error *ngIf="nombre.errors.minlength">Nombre debe tener por lo menos 5 caracteres</mat-error>
+      </mat-form-field>
 
-      <a>
-        <label position="stacked">Correo de contacto</label>
-        <div class="alert-danger" *ngIf="correo.invalid && (correo.dirty ||correo.touched )">
-          <div class="container-error-message" *ngIf="correo.errors.required">
-            Correo es requerido
-          </div>
-          <div class="container-error-message"
-            *ngIf="(correo.dirty || correo.touched) && correo.invalid && correo.errors.pattern">
-            Ingrese un correo valido
-          </div>
-        </div>
-        <input formControlName="correo" type="email"
-          pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"
-          autocapitalize="off" autocomplete="off" autocorrect="off">
-      </a>
+      <mat-form-field >
+        <mat-label>Empresa</mat-label>
+
+        <input matInput placeholder="Nombre Empresa"
+              formControlName="empresa"
+              type="text"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            >
+        <mat-error  *ngIf="empresa.invalid && (empresa.dirty ||empresa.touched )">Nombre es requerido</mat-error>
+        <mat-error *ngIf="empresa.errors.required">Nombre debe tener por lo menos 5 caracteres</mat-error>
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label>Requisitos</mat-label>
+
+        <textarea matInput placeholder="Nombre Empresa"
+        formControlName="requisistos" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"
+        ></textarea>
+        <mat-error  *ngIf="requisistos.invalid && (requisistos.dirty ||requisistos.touched )">Requisitos es requerido</mat-error>
+        <mat-error *ngIf="requisistos.errors.required">Requisitos debe tener por lo menos 5 caracteres</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field >
+        <mat-label>Correo de contacto</mat-label>
+
+        <input matInput placeholder="Nombre Empresa"
+        formControlName="correo" type="email"
+        pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"
+        autocapitalize="off" autocomplete="off" autocorrect="off"
+        >
+        <mat-error  *ngIf="correo.invalid && (correo.dirty ||correo.touched )">Correo es requerido</mat-error>
+        <mat-error *ngIf="correo.errors.required">Ingrese un correo valido</mat-error>
+      </mat-form-field>
 
       <a>
         <label position="stacked">Carrera</label>
