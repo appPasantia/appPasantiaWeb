@@ -1,0 +1,32 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: node_module instalation
+        run: npm install
+      - name: angular cli instalation
+        run: npm install -g @angular/cli
+      - name: Build
+        run: ng build
+      - name: zip addition
+        uses: actions/upload-artifact@v2
+        with:
+          path: dist
+      - name: Create Release folder
+        run: rsync -arv --exclude='.git/' --exclude='.github/' --exclude='.gitignore' . ./release
+      - name: Switch to Release Folder
+        run: |
+          cd release
+          ls -la
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          REPO_OWNER: agrupacion4
