@@ -7,6 +7,9 @@ import { Tab3Component } from './components/tab3/tab3.component';
 import { Tab2Component } from './components/tab2/tab2.component';
 import { FileListComponent } from './components/file-list/file-list.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 const routes: Routes = [
   { path: "", component: MainPageComponent },
@@ -15,7 +18,10 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   declarations: [
     MainPageComponent,

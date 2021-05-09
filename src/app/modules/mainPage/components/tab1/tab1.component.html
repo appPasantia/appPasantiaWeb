@@ -2,45 +2,58 @@
   <title> Pasantias </title>
 </header>
 
-<content fullscreen="true">
-  <div class="centerh" *ngIf="emptyList">
-    <div>
-      <p class="center">No exiten pasantias por el momento</p>
-    </div>
-    <div>
-      <ion-img class="image-empty" src="assets/img/inbox.png"></ion-img>
-    </div>
+<content fullscreen="true" >
+  <div class="margin">
+    <div class="centerh" *ngIf="emptyList">
+      <div>
+        <p class="center">No exiten pasantias por el momento</p>
+      </div>
+      <div>
+        <ion-img class="image-empty" src="assets/img/inbox.png"></ion-img>
+      </div>
 
-  </div>
-  <div *ngIf="loader;else showLoadPasantias">
-    <div *ngFor="let pasantia of pasantias; let i = index">
-      
-      <!-- Internship element -->
-      <div class="w3-row-padding">
-        <div class="w3-third w3-container w3-margin-bottom">
-          <img src="{{pasantia.logo}}" alt="Norway" style="width:100%" >
-          <div class="w3-container w3-white">
-            <p><b>{{pasantia.area}}</b></p>
-            <p>{{pasantia.nombre}}</p>
+    </div>
+    <div *ngIf="loader;else showLoadPasantias">
+      <div class="row">
+        <div *ngFor="let pasantia of pasantias; let i = index" class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <div [class.cardcolorbl]="i%2==0" [class.cardcolorgra]="i%2==1">
             <div class="derecha">
-              <button (click)="postular(pasantia)" mode="ios" size="small" color="dark">Postular</button>
+              <button (click)="postular(pasantia)" mat-raised-button color="primary">Primary</button>
+            </div>
+            <div class="center-img">
+              <img class="img-padding" src="{{pasantia.logo}}" />
+            </div>
+            <div>
+              <h3 color="light">{{pasantia.nombre}}</h3>
+
+              <div class="spacebetween">
+                <div color="light">{{pasantia.area}}</div>
+                <span (click)="seeMore(pasantia)" class="material-icons">
+                  arrow_drop_down
+                  </span>
+
+              </div>
+            </div>
+            <div *ngIf="pasantia.visibilidad">
+              {{pasantia.requisistos}}
             </div>
           </div>
         </div>
       </div>
-      
+
     </div>
+
+    <ng-template #showLoadPasantias>
+      <div class="ion-padding custom-skeleton" *ngFor="let pasantia of [1,2,3,4,5,6]">
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      </div>
+    </ng-template>
   </div>
 
-  <ng-template #showLoadPasantias>
-    <div class="ion-padding custom-skeleton" *ngFor="let pasantia of [1,2,3,4,5,6]">
-      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-      <ion-skeleton-text animated></ion-skeleton-text>
-      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-    </div>
-  </ng-template>
 
 </content>
 

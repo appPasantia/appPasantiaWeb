@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-file-list',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./file-list.component.scss']
 })
 export class FileListComponent implements OnInit {
+  @Input() fileUpload: any;
 
   constructor() { }
 
