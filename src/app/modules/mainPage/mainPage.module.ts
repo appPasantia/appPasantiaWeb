@@ -26,9 +26,6 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     NgxSkeletonLoaderModule
-
-
-
   ],
   declarations: [
     MainPageComponent,
