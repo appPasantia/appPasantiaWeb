@@ -1,0 +1,87 @@
+
+body{
+  margin: 10px;
+}
+:host{
+  margin: 3rem;
+  padding-left: 100px;
+}
+.derecha{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: flex-end;
+}
+img{
+  padding: 5px;
+  max-height: 200px;
+
+}
+:host >>> ngx-skeleton-loader .loader {
+  background-color: #C3E5E4;
+  color: black;
+  border-radius: 20px;
+  padding: 20px;
+  height: 200px;
+
+}
+.margin{
+  margin: 20px;
+}
+.cardcolorbl{
+  background-color: #C3E5E4;
+  color: black;
+  border-radius: 20px;
+  padding: 20px;
+
+  --color: black;
+
+}
+.cardcolorgra{
+  background-color: #E6E6E6;
+  border-radius: 20px;
+  color: black;
+  padding: 20px;
+}
+
+.spacebetween{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
+  color: black;
+}
+.color{
+  --ion-color-base: black;
+}
+.image-empty{
+  padding: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center{
+  padding: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerh{
+  padding: 50px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.center-img{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+}
