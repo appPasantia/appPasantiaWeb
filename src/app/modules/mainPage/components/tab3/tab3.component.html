@@ -1,11 +1,25 @@
-<header translucent="true">
-    <title>
-      Sube tu curriculum
-    </title>
-</header>
 
-<content fullscreen="true">
-  <div class="centerdiv">
-    <!-- app-file-upload [correo]="correo"></app-file-upload -->
+<form  class="contact-form" (submit)="sendEmail($event)">
+  <div>
+    <p position="stacked">Nombre</p>
+    <input  type="text" name="to_name" value="{{nombre}}" required/>
   </div>
-</content>
+
+  <div>
+    <p position="stacked">Correo empresa</p>
+    <input   type="email" name="email_to" value="{{correo}}" required/>
+  </div>
+  <div>
+    <p pposition="stacked">Telefono</p>
+    <input   type="number" name="phone" value="{{telefono}}"  required/>
+  </div>
+  <div>
+    <p position="stacked">Mensage</p>
+    <input  name="message" value="{{mensaje}}" required/>
+  </div>
+
+  <button class="center"
+  mode="ios"
+  size="small"
+  color="dark" type="submit" value="Enviar postulacion">Enviar postulacion</button>
+</form>

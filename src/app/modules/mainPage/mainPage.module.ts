@@ -10,6 +10,8 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { Tab2Component } from './components/tab2/tab2.component';
+import { Tab3Component } from './components/tab3/tab3.component';
 
 const routes: Routes = [
   { path: "", component: MainPageComponent },
@@ -27,9 +29,7 @@ const routes: Routes = [
     MainPageComponent,
     Tab1Component,
     Tab2Component,
-    Tab3Component,
-    FileListComponent,
-    FileUploadComponent,
+    Tab3Component
   ]
 })
 export class MainPageModule { }

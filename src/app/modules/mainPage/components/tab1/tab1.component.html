@@ -18,7 +18,7 @@
         <div *ngFor="let pasantia of pasantias; let i = index" class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
           <div [class.cardcolorbl]="i%2==0" [class.cardcolorgra]="i%2==1">
             <div class="derecha">
-              <button (click)="postular(pasantia)" mat-raised-button color="primary">Primary</button>
+              <button (click)="postular(pasantia)" mat-raised-button >Primary</button>
             </div>
             <div class="center-img">
               <img class="img-padding" src="{{pasantia.logo}}" />
