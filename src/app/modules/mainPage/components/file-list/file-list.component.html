@@ -1,0 +1,14 @@
+<div id="filePreview">
+  <div *ngFor = "let file of fileUpload">
+    <img loading="lazy" [src]="file" class="preview"/>
+    TODO mostrar un preview  o una imagen pequeña que necesite el usuario ver
+  </div>
+</div>
+
+<!--list>
+  <item *ngFor="let file of fileUpload">
+    <thumbnail slot="start">
+      <img [src]="file">
+    </thumbnail>
+  </item>
+</list-->

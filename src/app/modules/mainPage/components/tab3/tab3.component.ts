@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-tab3',
+  selector: 'tab3',
   templateUrl: './tab3.component.html',
   styleUrls: ['./tab3.component.scss']
 })

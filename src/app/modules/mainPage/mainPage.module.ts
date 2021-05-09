@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './mainPage.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Tab1Component } from './components/tab1/tab1.component';
+import { Tab3Component } from './components/tab3/tab3.component';
+import { Tab2Component } from './components/tab2/tab2.component';
+import { FileListComponent } from './components/file-list/file-list.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 const routes: Routes = [
   { path: "", component: MainPageComponent },
@@ -15,7 +19,11 @@ const routes: Routes = [
   ],
   declarations: [
     MainPageComponent,
-    Tab1Component
+    Tab1Component,
+    Tab2Component,
+    Tab3Component,
+    FileListComponent,
+    FileUploadComponent,
   ]
 })
 export class MainPageModule { }

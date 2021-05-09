@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { InternshipService } from 'src/app/shared/services/internship.service';
 
 @Component({
-  selector: 'app-tab2',
+  selector: 'tab2',
   templateUrl: './tab2.component.html',
   styleUrls: ['./tab2.component.scss']
 })
