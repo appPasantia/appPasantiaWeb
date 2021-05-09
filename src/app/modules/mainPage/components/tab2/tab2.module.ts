@@ -8,6 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
   ],
-  declarations: [Tab2Component]
+
 })
 export class Tab2Module { }

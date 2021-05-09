@@ -29,11 +29,11 @@
       <h4><b>Menu</b></h4>
     </div>
     <div class="w3-bar-block">
-      <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+      <a (click)="showComponent(1)" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
           class="fa fa-th-large fa-fw w3-margin-right"></i>LISTA DE LAS PASANTÍAS</a>
-      <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+      <a  (click)="showComponent(2)" class="w3-bar-item w3-button w3-padding"><i
           class="fa fa-user fa-fw w3-margin-right"></i>AGREGAR PASANTÍAS</a>
-      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+      <a   (click)="showComponent(3)" class="w3-bar-item w3-button w3-padding"><i
           class="fa fa-envelope fa-fw w3-margin-right"></i>SUBIR CURRICULUM</a>
       <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
           class="fa fa-envelope fa-fw w3-margin-right"></i>CERRAR SESIÓN</a>
@@ -58,8 +58,18 @@
       </div>
     </header>
 
+
     <!-- Internship Grid-->
-    <tab1></tab1>
+    <div *ngIf="showTab1">
+
+      <tab1></tab1>
+    </div>
+    <div *ngIf="showTab2">
+      <app-tab2></app-tab2>
+    </div>
+    <div *ngIf="showTab3">
+      <app-tab3></app-tab3>
+    </div>
 
 
 
