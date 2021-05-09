@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';;
 import { MatInputModule } from '@angular/material/input';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 const routes: Routes = [
   { path: "", component: MainPageComponent },
@@ -23,8 +24,8 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
-
+    MatInputModule,
+    NgxSkeletonLoaderModule
 
 
 

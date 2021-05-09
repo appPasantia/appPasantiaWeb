@@ -9,9 +9,8 @@
         <p class="center">No exiten pasantias por el momento</p>
       </div>
       <div>
-        <ion-img class="image-empty" src="assets/img/inbox.png"></ion-img>
+        <img class="image-empty"src="assets/img/inbox.png"/>
       </div>
-
     </div>
     <div *ngIf="loader;else showLoadPasantias">
       <div class="row">
@@ -43,13 +42,18 @@
 
     </div>
 
-    <ng-template #showLoadPasantias>
-      <div class="ion-padding custom-skeleton" *ngFor="let pasantia of [1,2,3,4,5,6]">
-        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-        <ion-skeleton-text animated></ion-skeleton-text>
-        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    <ng-template  #showLoadPasantias>
+      <div class="row">
+        <ngx-skeleton-loader class="load" count="5" class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" ></ngx-skeleton-loader>
+      </div>
+      <div>
+        <div class="row">
+          <ngx-skeleton-loader
+          count="5"
+          class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+        ></ngx-skeleton-loader>
+        </div>
+
       </div>
     </ng-template>
   </div>
