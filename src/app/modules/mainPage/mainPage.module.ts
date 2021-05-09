@@ -23,11 +23,7 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
-
-
-
-
+    MatInputModule,
   ],
   declarations: [
     MainPageComponent,

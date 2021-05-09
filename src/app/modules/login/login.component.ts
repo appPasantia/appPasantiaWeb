@@ -13,19 +13,21 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     //Current User verification
-    if(localStorage.getItem('user')!= null){
+    const actualUser = localStorage.getItem('user');
+    if(actualUser != null){
+      
       this.router.navigate(['/mainPage']);
     }
   }
   
-  onLoginGoogle(){
-    this.authService.onLoginGoogle().
-    then( ()=> {
-      this.router.navigate(['/mainPage']);
-    } ).
-    catch( (err)=>{
+  async onLoginGoogle(){
+    try {
+      await (this.authService.onLoginGoogle()).then( ()=> {
+        this.router.navigate(['/mainPage']);
+      } );
+    } catch (error) {
       alert('Error al iniciar sesión, Favor contactarse con soporte')
-    } );
+    }
   }
 
 }

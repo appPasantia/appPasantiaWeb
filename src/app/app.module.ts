@@ -10,9 +10,10 @@ import { environment } from "src/environments/environment";
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from "@angular/forms";
+import { AngularFireAuthModule } from "@angular/fire/auth";
 
 const routes: Routes = [
-  { path: "", redirectTo: "mainPage", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   {
     path: "login",
     loadChildren: () =>
@@ -33,6 +34,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     AngularFireStorageModule,
     NgbModule,
     FormsModule

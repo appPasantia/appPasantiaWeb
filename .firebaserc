@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "apppasantia-3d3db": {
+      "hosting": {
+        "pasantia": [
+          "apppasantia-3d3db"
+        ]
+      }
+    }
+  }
+}

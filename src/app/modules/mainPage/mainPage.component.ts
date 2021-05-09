@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-mainPage',
   templateUrl: './mainPage.component.html',
-  styleUrls: []
+  styleUrls: ['../../app.component.scss']
 })
 export class MainPageComponent implements OnInit {
   tabs: number;
 
   internshipInfoMP;
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
     this.tabs = 1;
@@ -25,6 +26,11 @@ export class MainPageComponent implements OnInit {
   changeToTab3(internshipInf) {
     this.internshipInfoMP = internshipInf;
     this.showComponent(3);
+  }
+
+  logout(){
+    alert('Está por cerrando sesión');
+    this.authService.logout();
   }
 
 }
