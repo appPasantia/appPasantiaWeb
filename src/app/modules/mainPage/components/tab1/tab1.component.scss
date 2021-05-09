@@ -34,7 +34,8 @@ img{
   color: black;
   border-radius: 20px;
   padding: 20px;
-
+ min-width: 300px;
+  max-width: 300px;
   --color: black;
 
 }
@@ -42,6 +43,8 @@ img{
   background-color: #E6E6E6;
   border-radius: 20px;
   color: black;
+  min-width: 300px;
+  max-width: 300px;
   padding: 20px;
 }
 
@@ -85,4 +88,14 @@ img{
   align-items: center;
   justify-content: center;
 
+}
+
+.load{
+  color: black;
+  border-radius: 20px;
+  padding: 20px;
+  height: 300px;
+ width: 300px;
+  max-width: 300px;
+  --color: black;
 }
