@@ -6,15 +6,23 @@ import firebase from "firebase/app";
   providedIn: 'root'
 })
 export class AuthService {
+  isLoggedIn = false;
 
-constructor(public authfire : AngularFireAuth) { }
+  constructor(public firebaseAuth: AngularFireAuth) { }
 
-async onLoginGoogle() {
-  return this.authfire.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-}
+  async onLoginGoogle() {
+    return this.firebaseAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then((result) => {
+        this.isLoggedIn = true;
+        localStorage.setItem('user', JSON.stringify(result.user));
+      }).catch((error) => {
+        alert('hubo un error con el servicio de google,favor de intentar de nuevo o contactar a soporte');
+      });
+  }
 
-onLogout() : void{
-  this.authfire.signOut();
-}
+  logout() {
+    this.firebaseAuth.signOut();
+    localStorage.removeItem('user');
+  }
 
 }
