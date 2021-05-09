@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pasantia } from 'src/app/shared/models/pasantia';
 import { InternshipService } from 'src/app/shared/services/internship.service';
@@ -9,6 +9,7 @@ import { InternshipService } from 'src/app/shared/services/internship.service';
   styleUrls: ['./tab1.component.scss']
 })
 export class Tab1Component implements OnInit {
+  @Output() internshipTab1 = new EventEmitter();
 
 
   description: boolean = false;
@@ -28,8 +29,10 @@ export class Tab1Component implements OnInit {
   seeMore(pasantia) {
     pasantia.visibilidad = !pasantia.visibilidad
   }
+
   postular(pasantia) {
-    this.router.navigate([`/tabs/tab3/${pasantia.correo}`])
+    this.internshipTab1.emit(pasantia);;
+    //this.router.navigate([`/tabs/tab3/${pasantia.correo}`])
   }
 
   getpasantias() {
