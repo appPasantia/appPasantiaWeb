@@ -1,0 +1,56 @@
+
+<div class="margin">
+  <div class="centerh" *ngIf="emptyList">
+    <div>
+      <p class="center">No exiten pasantias por el momento</p>
+    </div>
+    <div>
+      <img class="image-empty"src="assets/img/inbox.png"/>
+    </div>
+  </div>
+  <div *ngIf="loader;else showLoadPasantias">
+    <div class="row">
+      <div *ngFor="let pasantia of pasantias; let i = index" class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+        <div [class.cardcolorbl]="i%2==0" [class.cardcolorgra]="i%2==1">
+          <div class="derecha">
+            <button (click)="postular(pasantia)"mat-raised-button color="primary">Primary</button>
+          </div>
+          <div class="center-img">
+            <img class="img-padding" src="{{pasantia.logo}}" />
+          </div>
+
+          <div>
+            <h3 color="light">{{pasantia.nombre}}</h3>
+
+            <div class="spacebetween">
+              <div color="light">{{pasantia.area}}</div>
+              <span (click)="seeMore(pasantia)" class="material-icons">
+                arrow_drop_down
+                </span>
+
+            </div>
+          </div>
+          <div *ngIf="pasantia.visibilidad">
+            {{pasantia.requisistos}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <ng-template  #showLoadPasantias>
+    <div class="item">
+      <ngx-skeleton-loader count="5" appearance="circle"></ngx-skeleton-loader>
+    </div>
+    <div>
+      <div class="row">
+        <ngx-skeleton-loader
+        count="5"
+        class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+      ></ngx-skeleton-loader>
+      </div>
+
+    </div>
+  </ng-template>
+
+</div>
