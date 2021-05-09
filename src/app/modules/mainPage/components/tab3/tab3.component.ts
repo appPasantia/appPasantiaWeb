@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
@@ -9,22 +9,25 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
   styleUrls: ['./tab3.component.scss']
 })
 export class Tab3Component implements OnInit {
+  @Input() internshipInfo;
+
   correo: string;
   barStatus = false;
   fileUpload = [];
 
-  nombre='';
-  telefono:number;
-  postularForm:FormGroup;
-  mensaje='Hay una nueva postulación a su pasantía';
+  nombre = '';
+  telefono: number;
+  postularForm: FormGroup;
+  mensaje = 'Hay una nueva postulación a su pasantía';
 
   constructor(private route: ActivatedRoute) {
-    this.correo='';
+    this.correo = '';
   }
   ngOnInit() {
-    this.correo = this.route.snapshot.paramMap.get('correo');
-    alert(this.correo);
+    console.log("tab3", this.internshipInfo)
+    this.correo = this.internshipInfo.correo;
   }
+
   public sendEmail(e: Event) {
     console.log(e);
     e.preventDefault();
@@ -35,9 +38,9 @@ export class Tab3Component implements OnInit {
         console.log(error.text);
       });
   }
-  ionViewDidLeave(){
-    this.nombre='';
-    this.telefono=null;
+  ionViewDidLeave() {
+    this.nombre = '';
+    this.telefono = null;
   }
 
 }

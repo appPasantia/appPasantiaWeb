@@ -1,57 +1,36 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Raleway", sans-serif
-  }
-</style>
 
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
+<body class=" light-grey  content" style="max-width:1600px">
   <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-    <div class="w3-container">
-      <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
-        title="close menu">
+  <nav class=" sidebar  collapse  white  animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <div class=" container">
+      <a href="#" onclick="w3_close()" class=" hide-large  right  jumbo  padding  hover-grey" title="close menu">
         <i class="fa fa-remove"></i>
       </a>
       <h4><b>Menu</b></h4>
     </div>
-    <div class="w3-bar-block">
-      <a (click)="showComponent(1)" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
-          class="fa fa-th-large fa-fw w3-margin-right"></i>LISTA DE LAS PASANTÍAS</a>
-      <a  (click)="showComponent(2)" class="w3-bar-item w3-button w3-padding"><i
-          class="fa fa-user fa-fw w3-margin-right"></i>AGREGAR PASANTÍAS</a>
-      <a   (click)="showComponent(3)" class="w3-bar-item w3-button w3-padding"><i
-          class="fa fa-envelope fa-fw w3-margin-right"></i>SUBIR CURRICULUM</a>
-      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
-          class="fa fa-envelope fa-fw w3-margin-right"></i>CERRAR SESIÓN</a>
+    <div class="bar-block">
+      <a (click)="showComponent(1)" class="bar-item  button  padding  text-teal"><i
+          class="fa fa-th-large fa-fw  margin-right"></i>LISTA DE LAS PASANTÍAS</a>
+      <a (click)="showComponent(2)" class=" bar-item  button  padding"><i
+          class="fa fa-user fa-fw  margin-right"></i>AGREGAR PASANTÍAS</a>
+      <a href="#contact" onclick="w3_close()" class=" bar-item  button  padding"><i
+          class="fa fa-envelope fa-fw  margin-right"></i>CERRAR SESIÓN</a>
     </div>
   </nav>
 
   <!-- Overlay effect when opening sidebar on small screens -->
-  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
-    title="close side menu" id="myOverlay"></div>
+  <div class=" overlay  hide-large  animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
 
   <!-- !PAGE CONTENT! -->
   <div class="w3-main" style="margin-left:300px">
 
     <!-- Header -->
     <header id="portfolio">
-      <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
-          class="fa fa-bars"></i></span>
-      <div class="w3-container">
+      <span class="button  hide-large  xxlarge  hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+      <div class=" container">
         <h1><b> Pasantías </b></h1>
         <div class="w3-section w3-bottombar w3-padding-16">
         </div>
@@ -60,17 +39,11 @@
 
 
     <!-- Internship Grid-->
-    <div *ngIf="showTab1">
-      <tab1></tab1>
+    <div [ngSwitch]="tabs">
+      <a *ngSwitchCase=1> <tab1 (internshipTab1)="changeToTab3($event)" ></tab1> </a>
+      <a *ngSwitchCase=2> <tab2></tab2> </a>
+      <a *ngSwitchCase=3> <tab3 [internshipInfo]="internshipInfoMP" ></tab3> </a>
     </div>
-    <div *ngIf="showTab2">
-      <tab2></tab2>
-    </div>
-    <div *ngIf="showTab3">
-      <tab3></tab3>
-    </div>
-
-
 
     <!-- End page content -->
   </div>
