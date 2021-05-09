@@ -14,7 +14,6 @@ export class Tab3Component implements OnInit {
   fileUpload = [];
 
   nombre='';
-  //correo='ch.rash37@gmail.com';
   telefono:number;
   postularForm:FormGroup;
   mensaje='Hay una nueva postulación a su pasantía';
