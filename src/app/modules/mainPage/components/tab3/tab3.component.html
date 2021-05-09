@@ -1,36 +1,48 @@
-<form [formGroup]="emailForm" class="centerspace" (submit)="sendEmail($event)">
+<form [formGroup]="emailForm" class="centerspace" (ngSubmit)="sendEmail($event)">
 
   <mat-form-field >
     <mat-label>Nombre pansatía</mat-label>
     <input matInput placeholder="Nombre pansatía"
       formControlName="to_name"
       type="text"
+      name="to_name" value="{{nombre}}" required
       autocapitalize="off"
       autocomplete="off"
       autocorrect="off"
     >
   </mat-form-field>
 
-</form>
-<form  class="contact-form" >
-  <div>
-    <p position="stacked">Nombre</p>
-    <input  type="text" name="to_name" value="{{nombre}}" required/>
-  </div>
+  <mat-form-field >
+    <mat-label>Correo empresa</mat-label>
+    <input matInput placeholder="Nombre pansatía"
+      formControlName="email_to"
+      type="email" name="email_to" value="{{correo}}" disabled required
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
+    >
+  </mat-form-field>
 
-  <div>
-    <p position="stacked">Correo empresa</p>
-    <input   type="email" name="email_to" value="{{correo}}" disabled/>
-  </div>
-  <div>
-    <p pposition="stacked">Telefono</p>
-    <input   type="number" name="phone" value="{{telefono}}"  required/>
-  </div>
-  <div>
-    <p position="stacked">Mensage</p>
-    <input  name="message" value="{{mensaje}}" disabled/>
-  </div>
-
+  <mat-form-field >
+    <mat-label>Telefono</mat-label>
+    <input matInput placeholder="Nombre pansatía"
+      formControlName="phone"
+      type="number" name="phone" value="{{telefono}}"  required
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
+    >
+  </mat-form-field>
+  <mat-form-field >
+    <mat-label>Mensage</mat-label>
+    <input matInput placeholder="Nombre pansatía"
+      formControlName="message"
+      type="text" name="message" value="{{mensaje}}" disabled
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
+    >
+  </mat-form-field>
   <button class="center"
   mode="ios"
   size="small"

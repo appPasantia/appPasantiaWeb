@@ -25,13 +25,10 @@ const routes: Routes = [
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-<<<<<<< HEAD
-=======
     NgxSkeletonLoaderModule
 
 
 
->>>>>>> 9290580d649a96b9d3158548a7ba5a12c7de5911
   ],
   declarations: [
     MainPageComponent,
