@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
@@ -14,6 +14,7 @@ export class Tab3Component implements OnInit {
   correo: string;
   barStatus = false;
   fileUpload = [];
+  emailForm: FormGroup;
 
   nombre = '';
   telefono: number;
@@ -22,6 +23,13 @@ export class Tab3Component implements OnInit {
 
   constructor(private route: ActivatedRoute) {
     this.correo = '';
+    this.emailForm=new FormGroup({
+      to_name: new FormControl('', [Validators.required]),
+      email_to: new FormControl('',[Validators.required]),
+      phone: new FormControl('',[Validators.required]),
+      message: new FormControl('',[Validators.required]),
+
+      });
   }
   ngOnInit() {
     console.log("tab3", this.internshipInfo)

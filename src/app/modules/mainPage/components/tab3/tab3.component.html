@@ -1,4 +1,21 @@
-<form  class="contact-form" (submit)="sendEmail($event)">
+<form [formGroup]="emailForm" class="centerspace" (submit)="sendEmail($event)">
+
+  <mat-form-field >
+    <mat-label>Nombre pansatía</mat-label>
+    <input matInput placeholder="Nombre pansatía"
+      formControlName="to_name"
+      type="text"
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
+
+    >
+    <mat-error  *ngIf="emailForm.invalid && (emailForm.dirty ||emailForm.touched )">Nombre es requerido</mat-error>
+    <mat-error *ngIf="emailForm.errors.minlength">Nombre debe tener por lo menos 5 caracteres</mat-error>
+  </mat-form-field>
+
+</form>
+<form  class="contact-form" >
   <div>
     <p position="stacked">Nombre</p>
     <input  type="text" name="to_name" value="{{nombre}}" required/>
