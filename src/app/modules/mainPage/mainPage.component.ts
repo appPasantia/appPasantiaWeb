@@ -12,6 +12,8 @@ export class MainPageComponent implements OnInit {
   actualUser: any;
   internshipInfoMP;
 
+  search:string;
+
   constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
