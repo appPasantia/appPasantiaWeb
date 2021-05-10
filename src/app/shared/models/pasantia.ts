@@ -7,5 +7,5 @@ export interface Pasantia {
     visibilidad: boolean;
     empresa: string;
     correo: string;
+    date: string;
   }
-  

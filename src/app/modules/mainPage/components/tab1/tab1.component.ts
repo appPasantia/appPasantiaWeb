@@ -17,8 +17,6 @@ export class Tab1Component implements OnInit {
   emptyList: boolean = false;
   loader: boolean = false;
 
-
-
   private path = 'pasantias/'
   constructor(private router: Router, private internshipService: InternshipService) { }
   ngOnInit(): void {
@@ -40,7 +38,7 @@ export class Tab1Component implements OnInit {
       if (res) {
         this.pasantias = res;
         this.loader = true;
-
+        console.log('PASANTIAS', this.pasantias, res)
       }
       if (this.pasantias.length == 0) {
         this.emptyList = true;
@@ -48,7 +46,12 @@ export class Tab1Component implements OnInit {
         this.emptyList = false;
       }
     });
-    console.log('PASANTIAS', this.pasantias)
+    console.log('PASANTIAS', this.pasantias);
+
+  }
+
+  sortList(){
+
   }
 
 }

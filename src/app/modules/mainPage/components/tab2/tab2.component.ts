@@ -65,7 +65,7 @@ export class Tab2Component implements OnInit {
   guardarPasantia() {
 
     const id = this.pasantiaServeice.getID();
-    this.pasantiaServeice.createPasantias(this.loginForm.value, this.path, id);
+    this.pasantiaServeice.createPasantias(Object.assign(this.loginForm.value, {date: new Date()}), this.path, id);
     this.onResetForm();
     this.router.navigate(['/tabs/tab1'])
     console.log('form', this.loginForm.value)
