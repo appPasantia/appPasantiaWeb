@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';;
 import { MatInputModule } from '@angular/material/input';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { AvatarModule } from 'ngx-avatar';
 
 const routes: Routes = [
   { path: "", component: MainPageComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    AvatarModule
   ],
   declarations: [
     MainPageComponent,
