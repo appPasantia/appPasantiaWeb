@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'tab3',
@@ -21,34 +22,37 @@ export class Tab3Component implements OnInit {
   postularForm: FormGroup;
   mensaje = 'Hay una nueva postulación a su pasantía';
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private http: HttpClient,private route: ActivatedRoute,private router: Router) {
     this.correo = '';
     this.emailForm=new FormGroup({
       to_name: new FormControl('', [Validators.required]),
-      email_to: new FormControl('',[Validators.required]),
+      email_to: new FormControl({value:'', disabled: true},[Validators.required]),
       phone: new FormControl('',[Validators.required]),
-      message: new FormControl('',[Validators.required]),
+      message: new FormControl({value:'', disabled: true},[Validators.required]),
 
       });
   }
   ngOnInit() {
     console.log("tab3", this.internshipInfo)
     this.correo = this.internshipInfo.correo;
+    this.emailForm.controls['email_to'].setValue(this.correo);
+    this.emailForm.controls['message'].setValue(this.mensaje);
+    console.log("tab3", this.emailForm.value)
   }
 
-  public sendEmail(e: Event) {
-    console.log(e);
-    e.preventDefault();
-    emailjs.sendForm('service_5n3w2me', 'template_p2qmxmr', e.target as HTMLFormElement, 'user_h3wl5X7fbp7lUayv6EeT6')
-      .then((result: EmailJSResponseStatus) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
-  }
   ionViewDidLeave() {
     this.nombre = '';
     this.telefono = null;
   }
 
+  public sendEmail2(e: Event) {
+    e.preventDefault();
+    emailjs.sendForm('service_5n3w2me', 'template_xavbtyi', e.target as HTMLFormElement, 'user_h3wl5X7fbp7lUayv6EeT6')
+      .then((result: EmailJSResponseStatus) => {
+        console.log(result.text);
+        this.router.navigate(['/mainPage']);
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
 }
