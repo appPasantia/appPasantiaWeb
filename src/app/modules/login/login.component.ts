@@ -14,8 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     //Current User verification
     const actualUser = localStorage.getItem('user');
-    if(actualUser != null){
-      
+    if(actualUser != null ){
       this.router.navigate(['/mainPage']);
     }
   }
@@ -26,6 +25,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/mainPage']);
       } );
     } catch (error) {
+      this.authService.logout();
       alert('Error al iniciar sesión, Favor contactarse con soporte')
     }
   }

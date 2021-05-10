@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -11,17 +12,22 @@ export class MainPageComponent implements OnInit {
 
   internshipInfoMP;
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
-    this.tabs = 1;
+    const actualUser = JSON.parse(localStorage.getItem('user'));
+    console.log(actualUser.photoURL);
+    if(actualUser == null ){
+      this.router.navigate(['/login']);
+    }else{
+      this.tabs = 1;
+    }
   }
 
   showComponent(tab: number) {
     this.tabs = tab;
     document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-  }
+    }
 
   changeToTab3(internshipInf) {
     this.internshipInfoMP = internshipInf;
@@ -31,6 +37,7 @@ export class MainPageComponent implements OnInit {
   logout(){
     alert('Está por cerrando sesión');
     this.authService.logout();
+    console.log("user logout", this.authService.getCurrentUser());
   }
 
 }
