@@ -1,3 +1,4 @@
+<div class="form-container">
 <header translucent="true">
   <title> Subir pasantia </title>
 </header>
@@ -6,82 +7,75 @@
   <div class="centerdiv">
     <form [formGroup]="loginForm" class="centerspace" (ngSubmit)="onResetForm()">
 
-      <mat-form-field >
-        <mat-label>Nombre pansatía</mat-label>
-        <input matInput placeholder="Nombre pansatía"
-          formControlName="nombre"
-          type="email"
-          autocapitalize="off"
-          autocomplete="off"
-          autocorrect="off"
 
-        >
-        <mat-error  *ngIf="nombre.invalid && (nombre.dirty ||nombre.touched )">Nombre es requerido</mat-error>
-        <mat-error *ngIf="nombre.errors.minlength">Nombre debe tener por lo menos 5 caracteres</mat-error>
-      </mat-form-field>
+      <input type="text" class="input222" formControlName="nombre" placeholder="Nombre de pasantia">
+      <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+        <div class="container-error-message" *ngIf="nombre.errors.required">
+          Nombre es requerido
+        </div>
+        <div class="container-error-message" *ngIf="nombre.errors.minlength">
+          Debe tener 5 caracteres o mas
+        </div>
+      </div>
 
-      <mat-form-field >
-        <mat-label>Empresa</mat-label>
+      <input type="text"  class="input222" formControlName="empresa" placeholder="Nombre de empresa">
+      <div class="alert alert-danger" *ngIf="empresa.invalid && (empresa.dirty || empresa.touched)">
+        <div class="container-error-message" *ngIf="empresa.errors.required">
+          Empresa es requerido
+        </div>
+        <div class="container-error-message" *ngIf="empresa.errors.minlength">
+          Debe tener 5 caracteres o mas
+        </div>
+      </div>
 
-        <input matInput placeholder="Nombre Empresa"
-              formControlName="empresa"
-              type="text"
-              autocapitalize="off"
-              autocomplete="off"
-              autocorrect="off"
-            >
-        <mat-error  *ngIf="empresa.invalid && (empresa.dirty ||empresa.touched )">Nombre es requerido</mat-error>
-        <mat-error *ngIf="empresa.errors.required">Nombre debe tener por lo menos 5 caracteres</mat-error>
-      </mat-form-field>
-
-      <mat-form-field >
-        <mat-label>Requisitos</mat-label>
-
-        <textarea matInput placeholder="Requisistos de la pasantía"
-        formControlName="requisistos" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"
-        ></textarea>
-        <mat-error  *ngIf="requisistos.invalid && (requisistos.dirty ||requisistos.touched )">Requisitos es requerido</mat-error>
-        <mat-error *ngIf="requisistos.errors.required">Requisitos debe tener por lo menos 5 caracteres</mat-error>
-      </mat-form-field>
+      <input type="text" class="input222" formControlName="requisistos" placeholder="Requisitos de pasantia">
+      <div class="alert alert-danger" *ngIf="requisistos.invalid && (requisistos.dirty || requisistos.touched)">
+        <div class="container-error-message" *ngIf="requisistos.errors.required">
+          Requisitos es requerido
+        </div>
+        <div class="container-error-message" *ngIf="requisistos.errors.minlength">
+          Debe tener 5 caracteres o mas
+        </div>
+      </div>
 
 
-      <mat-form-field >
-        <mat-label>Correo de contacto</mat-label>
+      <input type="text" class="input222" formControlName="correo" placeholder="Correo de pasantia">
+      <div class="alert alert-danger" *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+        <div class="container-error-message" *ngIf="correo.errors.required">
+          Correo es requerido
+        </div>
+        <div class="container-error-message" *ngIf="correo.errors.minlength">
+          Debe tener 5 caracteres o mas
+        </div>
+        <div class="container-error-message" *ngIf="(correo.dirty || correo.touched) && correo.invalid && correo.errors.pattern">
+          Ingresa un correo valido
+        </div>
+      </div>
 
-        <input matInput placeholder="Correo de contacto"
-        formControlName="correo" type="email"
-        pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"
-        autocapitalize="off" autocomplete="off" autocorrect="off"
-        >
-        <mat-error  *ngIf="correo.invalid && (correo.dirty ||correo.touched )">Correo es requerido</mat-error>
-        <mat-error *ngIf="correo.errors.required">Ingrese un correo valido</mat-error>
-      </mat-form-field>
-
-      <mat-form-field >
-        <mat-label>Carrera</mat-label>
-
-        <input matInput placeholder="Area o carrera de la pasantía"
-        formControlName="area" required
-        autocapitalize="off" autocomplete="off" autocorrect="off"
-        >
-        <mat-error  *ngIf="area.invalid && (area.dirty ||area.touched )">Carrera es requerido</mat-error>
-        <mat-error *ngIf="area.errors.required">Carrera debe tener por lo menos 5 caracteres</mat-error>
-      </mat-form-field>
+      <input type="text" class="input222" formControlName="area" placeholder="Carrera">
+      <div class="alert alert-danger" *ngIf="area.invalid && (area.dirty || area.touched)">
+        <div class="container-error-message" *ngIf="area.errors.required">
+          Carrera es requerido
+        </div>
+        <div class="container-error-message" *ngIf="area.errors.minlength">
+          Debe tener 5 caracteres o mas
+        </div>
+      </div>
 
 
 
       <img src="assets/img/photo.png">
 
-      <mat-form-field >
-        <mat-label>Url Imagen</mat-label>
 
-        <input matInput placeholder="Logo de empresa"
-        formControlName="logo" required
-        autocapitalize="off" autocomplete="off" autocorrect="off"
-        >
-        <mat-error  *ngIf="logo.invalid && (logo.dirty ||logo.touched )">Logo es requerido</mat-error>
-        <mat-error *ngIf="logo.errors.minlength || logo.errors.required"> Logo debe tener por lo menos 5 caracteres</mat-error>
-      </mat-form-field>
+      <input type="text" class="input222" formControlName="logo" placeholder="Logo de pasantia">
+      <div class="alert alert-danger" *ngIf="logo.invalid && (logo.dirty || logo.touched)">
+        <div class="container-error-message" *ngIf="logo.errors.required">
+          Logo es requerido
+        </div>
+        <div class="container-error-message" *ngIf="logo.errors.minlength">
+          Debe tener 5 caracteres o mas
+        </div>
+      </div>
 
 
       <button (click)="guardarPasantia()" class="botonpublicar" mode="ios" size="small" color="dark"
@@ -91,3 +85,4 @@
   </div>
 
 </content>
+</div>

@@ -15,11 +15,11 @@ export class Tab2Component implements OnInit {
 
   createFormGroup() {
     return new FormGroup({
-      nombre: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
-      empresa: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
-      requisistos: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      nombre: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      empresa: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      requisistos: new FormControl('', [Validators.required, Validators.minLength(5)]),
       correo: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-      area: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      area: new FormControl('', [Validators.required, Validators.minLength(5)]),
       logo: new FormControl('', [Validators.required, Validators.minLength(5)]),
     });
   }
