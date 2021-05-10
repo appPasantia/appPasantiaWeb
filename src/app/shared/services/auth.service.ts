@@ -14,6 +14,7 @@ export class AuthService {
   constructor(public firebaseAuth: AngularFireAuth) { }
 
   async onLoginGoogle() {
+    this.logout();
     try {
       const authUser = this.firebaseAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
       localStorage.setItem('user', JSON.stringify((await authUser).user));
@@ -36,6 +37,7 @@ export class AuthService {
     try {
       return (await this.firebaseAuth.authState.pipe(first()).toPromise());
     } catch (error) {
+      this.logout();
       alert('hubo un error con el servicio de google,contactar a soporte');
     }
   }
