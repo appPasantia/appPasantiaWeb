@@ -1,37 +1,37 @@
 
 <form class="centerspace" (submit)="sendEmail2($event)">
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>Nombre</mat-label>
-    <input matInput
+    <input matInput class="inputclass"
       type="text"
       name="to_name" required
     >
   </mat-form-field>
-  <mat-form-field >
-    <mat-label>Nombre de la página</mat-label>
-    <input matInput
+  <mat-form-field  >
+    <mat-label >Nombre de la página</mat-label>
+    <input matInput class="inputclass"
       type="text"
       name="from_name" value="App Pasantia" required
     >
   </mat-form-field>
   <mat-form-field >
     <mat-label>Correo de la empresa</mat-label>
-    <input matInput
+    <input matInput class="inputclass"
     type="email" name="email_to" value="{{correo}}" required
     >
   </mat-form-field>
   <mat-form-field >
     <mat-label>Mensaje</mat-label>
-    <input matInput
+    <input matInput class="inputclass"
     type="text" name="message" value="{{mensaje}}" required
     >
   </mat-form-field>
   <mat-form-field >
     <mat-label>Telefono</mat-label>
-    <input matInput
+    <input matInput class="inputclass"
     type="text" name="phone"  required
     >
   </mat-form-field>
 
-  <input type="submit" value="Send">
+  <input type="submit" value="Send" class="botonsend">
 </form>
