@@ -1,50 +1,37 @@
-<form [formGroup]="emailForm" class="centerspace" (ngSubmit)="sendEmail($event)">
 
+<form class="centerspace" (submit)="sendEmail2($event)">
   <mat-form-field >
-    <mat-label>Nombre pansatía</mat-label>
-    <input matInput placeholder="Nombre pansatía"
-      formControlName="to_name"
+    <mat-label>Nombre</mat-label>
+    <input matInput
       type="text"
-      name="to_name" value="{{nombre}}" required
-      autocapitalize="off"
-      autocomplete="off"
-      autocorrect="off"
+      name="to_name" required
     >
   </mat-form-field>
-
   <mat-form-field >
-    <mat-label>Correo empresa</mat-label>
-    <input matInput placeholder="Nombre pansatía"
-      formControlName="email_to"
-      type="email" name="email_to" value="{{correo}}" disabled required
-      autocapitalize="off"
-      autocomplete="off"
-      autocorrect="off"
+    <mat-label>Nombre de la página</mat-label>
+    <input matInput
+      type="text"
+      name="from_name" value="App Pasantia" required
     >
   </mat-form-field>
-
+  <mat-form-field >
+    <mat-label>Correo de la empresa</mat-label>
+    <input matInput
+    type="email" name="email_to" value="{{correo}}" required
+    >
+  </mat-form-field>
+  <mat-form-field >
+    <mat-label>Mensaje</mat-label>
+    <input matInput
+    type="text" name="message" value="{{mensaje}}" required
+    >
+  </mat-form-field>
   <mat-form-field >
     <mat-label>Telefono</mat-label>
-    <input matInput placeholder="Nombre pansatía"
-      formControlName="phone"
-      type="number" name="phone" value="{{telefono}}"  required
-      autocapitalize="off"
-      autocomplete="off"
-      autocorrect="off"
+    <input matInput
+    type="text" name="phone"  required
     >
   </mat-form-field>
-  <mat-form-field >
-    <mat-label>Mensage</mat-label>
-    <input matInput placeholder="Nombre pansatía"
-      formControlName="message"
-      type="text" name="message" value="{{mensaje}}" disabled
-      autocapitalize="off"
-      autocomplete="off"
-      autocorrect="off"
-    >
-  </mat-form-field>
-  <button class="center"
-  mode="ios"
-  size="small"
-  color="dark" type="submit" value="Enviar postulacion">Enviar postulacion</button>
+
+  <input type="submit" value="Send">
 </form>
