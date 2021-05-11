@@ -12,6 +12,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatIconModule,
     NgxSkeletonLoaderModule
   ],
-
+  exports:[
+    Tab1Component
+  ]
 })
 export class Tab1Module { }

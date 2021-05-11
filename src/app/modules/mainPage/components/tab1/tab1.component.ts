@@ -17,6 +17,8 @@ export class Tab1Component implements OnInit {
   emptyList: boolean = false;
   loader: boolean = false;
 
+  search:string;
+  total = [];
 
 
   private path = 'pasantias/'
@@ -51,4 +53,18 @@ export class Tab1Component implements OnInit {
     console.log('PASANTIAS', this.pasantias)
   }
 
+  searchInternship(): void {
+    this.total = [];
+    if(this.search == null || this.search == ''){
+      this.getpasantias();
+      this.total = [];
+      console.log('TOTAL', this.total);
+    } else {
+      this.pasantias.filter(s =>
+        s.nombre.includes(this.search.toLowerCase()) ? this.total.push(s) : ''
+      );
+      this.pasantias = this.total.filter(s => s.nombre);
+      console.log('TOTAL', this.total);
+    }
+  }
 }

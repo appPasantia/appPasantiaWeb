@@ -12,8 +12,6 @@ export class MainPageComponent implements OnInit {
   actualUser: any;
   internshipInfoMP;
 
-  search:string;
-
   constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
@@ -29,7 +27,7 @@ export class MainPageComponent implements OnInit {
   showComponent(tab: number) {
     this.tabs = tab;
     document.getElementById("mySidebar").style.display = "none";
-    }
+  }
 
   changeToTab3(internshipInf) {
     this.internshipInfoMP = internshipInf;
@@ -41,5 +39,4 @@ export class MainPageComponent implements OnInit {
     this.authService.logout();
     console.log("user logout", this.authService.getCurrentUser());
   }
-
 }
