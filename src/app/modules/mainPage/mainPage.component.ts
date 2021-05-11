@@ -18,7 +18,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.actualUser = JSON.parse(localStorage.getItem('user'));
-    console.log(this.actualUser.photoURL);
     if(this.actualUser == null ){
       this.router.navigate(['/login']);
     }else{

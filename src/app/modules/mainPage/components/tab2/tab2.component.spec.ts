@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { Tab2Component } from './tab2.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Tab2Component', () => {
   let component: Tab2Component;
@@ -11,6 +12,7 @@ describe('Tab2Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[RouterTestingModule],
       declarations: [ Tab2Component ]
     })
     .compileComponents();

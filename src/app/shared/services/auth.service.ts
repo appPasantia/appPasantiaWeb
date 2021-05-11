@@ -14,7 +14,7 @@ export class AuthService {
   constructor(public firebaseAuth: AngularFireAuth) { }
 
   async onLoginGoogle() {
-    this.logout();
+   this.logout();
     try {
       const authUser = this.firebaseAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
       localStorage.setItem('user', JSON.stringify((await authUser).user));
