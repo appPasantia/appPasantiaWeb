@@ -1,5 +1,9 @@
 <header translucent="true">
   <title> Pasantias </title>
+  <div class=" container text-teal ">
+    <input [(ngModel)]="search" placeholder="Tu pasantia perfecta">
+    <button type="button" mat-button (click)="searchInternship()"> <mat-icon>search</mat-icon> </button>
+  </div>
 </header>
 
 <content fullscreen="true" >
