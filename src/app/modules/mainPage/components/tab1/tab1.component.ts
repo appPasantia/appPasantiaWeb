@@ -24,7 +24,10 @@ export class Tab1Component implements OnInit {
 
 
   seeMore(pasantia) {
-    pasantia.visibilidad = !pasantia.visibilidad
+    pasantia.visibilidad = this.chageVisivilidad(pasantia)
+  }
+  chageVisivilidad(pasantia){
+    return !pasantia.visibilidad
   }
 
   postular(pasantia) {
