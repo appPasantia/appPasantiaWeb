@@ -40,4 +40,7 @@ export class MainPageComponent implements OnInit {
     console.log("user logout", this.authService.getCurrentUser());
   }
 
+  changeToTab1(){
+    this.showComponent(1);
+  }
 }

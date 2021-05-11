@@ -6,6 +6,13 @@ body{
   margin: 3rem;
   padding-left: 100px;
 }
+.space{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-content: space-between;
+
+}
 .derecha{
   display: flex;
   justify-content: flex-end;
@@ -13,8 +20,8 @@ body{
   align-items: flex-end;
 }
 img{
-  padding: 5px;
-  max-height: 200px;
+  padding: 10px;
+  max-height: 150px;
   max-width: 280px;
 
 }
@@ -34,6 +41,11 @@ img{
   color: black;
   border-radius: 20px;
   padding: 20px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 300px;
  min-width: 300px;
   max-width: 300px;
   --color: black;
@@ -43,6 +55,11 @@ img{
   background-color: #E6E6E6;
   border-radius: 20px;
   color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 5px;
+  min-height: 300px;
   min-width: 300px;
   max-width: 300px;
   padding: 20px;

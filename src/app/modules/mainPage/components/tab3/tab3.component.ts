@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
@@ -11,7 +11,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class Tab3Component implements OnInit {
   @Input() internshipInfo;
-
+  @Output() changeTab = new EventEmitter();
   correo: string;
   barStatus = false;
   fileUpload = [];
@@ -50,7 +50,8 @@ export class Tab3Component implements OnInit {
     emailjs.sendForm('service_5n3w2me', 'template_xavbtyi', e.target as HTMLFormElement, 'user_h3wl5X7fbp7lUayv6EeT6')
       .then((result: EmailJSResponseStatus) => {
         console.log(result.text);
-        this.router.navigate(['/mainPage']);
+        alert('El correo fue enviado con exito!')
+        this.changeTab.emit();
       }, (error) => {
         console.log(error.text);
       });

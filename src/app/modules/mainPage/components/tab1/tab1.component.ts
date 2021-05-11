@@ -29,14 +29,14 @@ export class Tab1Component implements OnInit {
   }
 
   postular(pasantia) {
-    this.internshipTab1.emit(pasantia);;
+    this.internshipTab1.emit(pasantia);
     //this.router.navigate([`/tabs/tab3/${pasantia.correo}`])
   }
 
   getpasantias() {
     this.internshipService.getCollectionPasantia<Pasantia>(this.path).subscribe((res) => {
       if (res) {
-        this.pasantias = res;
+        this.pasantias = this.sortList(res);
         this.loader = true;
         console.log('PASANTIAS', this.pasantias, res)
       }
@@ -50,8 +50,8 @@ export class Tab1Component implements OnInit {
 
   }
 
-  sortList(){
-
+  sortList(pasantias:any){
+    return pasantias.sort((a, b) =>b.date - a.date);
   }
 
 }

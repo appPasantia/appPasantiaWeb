@@ -24,19 +24,6 @@
 }
 
 
-.input-wrapper {
-  display: flex;
-  flex: 1 1 0%;
-  flex-direction: inherit;
-  align-items: inherit;
-  align-self: stretch;
-  text-overflow: ellipsis;
-  overflow: inherit;
-  box-sizing: border-box;
- --border-width: 1px !important;
-  --border-style: solid !important;
-  --border-color: black !important;
-}
 
 
 .derecha{
@@ -47,12 +34,6 @@
 }
 
 
-.input1{
-  border-width: 1px !important;
-  border-style: solid !important;
-  border-color: black !important;
-  background-color: aqua;
-}
 
 .centerdiv{
   display: flex;
@@ -97,9 +78,3 @@
   background-color: #ffffff;
 }
 
-.inputclass{
-  border-radius: 5px !important;
-  border: 1px solid #39c !important;
-  background-color: rgb(255, 255, 255);
-  padding: 10px;
-}

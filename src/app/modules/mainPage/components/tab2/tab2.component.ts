@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InternshipService } from 'src/app/shared/services/internship.service';
@@ -10,6 +10,7 @@ import { InternshipService } from 'src/app/shared/services/internship.service';
 })
 export class Tab2Component implements OnInit {
 
+  @Output() changeTab = new EventEmitter();
   emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   loginForm: FormGroup;
 
@@ -67,7 +68,7 @@ export class Tab2Component implements OnInit {
     const id = this.pasantiaServeice.getID();
     this.pasantiaServeice.createPasantias(Object.assign(this.loginForm.value, {date: new Date()}), this.path, id);
     this.onResetForm();
-    this.router.navigate(['/tabs/tab1'])
+    this.changeTab.emit();
     console.log('form', this.loginForm.value)
 
   }
