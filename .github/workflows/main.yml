@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@main
+        uses: actions/checkout@main
       - name: Setup node
-      - uses: actions/setup-node@v1
+        uses: actions/setup-node@v1
       - name: Install dependecies
         run: npm ci
       - name: Install angular/cli
