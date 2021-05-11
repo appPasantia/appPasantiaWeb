@@ -13,6 +13,7 @@ export class Tab2Component implements OnInit {
   @Output() changeTab = new EventEmitter();
   emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   loginForm: FormGroup;
+  message: string;
 
   createFormGroup() {
     return new FormGroup({
@@ -38,6 +39,10 @@ export class Tab2Component implements OnInit {
   }
 
   onSaveForm() {
+    if(this.loginForm.valid){
+      this.message = "Se añadió la pasantia a la lista"
+    this.loginForm.reset();
+    }
 
   }
 
@@ -67,6 +72,7 @@ export class Tab2Component implements OnInit {
 
     const id = this.pasantiaServeice.getID();
     this.pasantiaServeice.createPasantias(Object.assign(this.loginForm.value, {date: new Date()}), this.path, id);
+    alert('Pasantia se añadió correctamente a la lista');
     this.onResetForm();
     this.changeTab.emit();
     console.log('form', this.loginForm.value)
