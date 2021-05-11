@@ -3,7 +3,7 @@ import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -47,7 +47,8 @@ describe('Tab1Component', () => {
             MatFormFieldModule,
             MatInputModule,
             NgxSkeletonLoaderModule,
-            AvatarModule
+            AvatarModule,
+            FormsModule
           ],
           declarations: [
             MainPageComponent,
