@@ -4,6 +4,10 @@
 <body class=" light-grey  content" style="max-width:1600px">
   <!-- Sidebar/menu -->
   <nav class="sidebar  collapse  white  animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <div class="center">
+      <ngx-avatar [name]="actualUser?.displayName" size="50"></ngx-avatar>
+      <h4><b>{{actualUser?.displayName}}</b></h4>
+    </div>
     <div class=" container text-teal">
       <h4><b>Menu</b></h4>
     </div>

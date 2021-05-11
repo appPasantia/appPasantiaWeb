@@ -9,15 +9,16 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class MainPageComponent implements OnInit {
   tabs: number;
-
+  actualUser: any;
   internshipInfoMP;
+
+  search:string;
 
   constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
-    const actualUser = JSON.parse(localStorage.getItem('user'));
-    console.log(actualUser.photoURL);
-    if(actualUser == null ){
+    this.actualUser = JSON.parse(localStorage.getItem('user'));
+    if(this.actualUser == null ){
       this.router.navigate(['/login']);
     }else{
       this.tabs = 1;

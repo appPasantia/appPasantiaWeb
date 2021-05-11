@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'tab3',
@@ -22,7 +21,7 @@ export class Tab3Component implements OnInit {
   postularForm: FormGroup;
   mensaje = 'Hay una nueva postulación a su pasantía';
 
-  constructor(private http: HttpClient,private route: ActivatedRoute,private router: Router) {
+  constructor(private router: Router) {
     this.correo = '';
     this.emailForm=new FormGroup({
       to_name: new FormControl('', [Validators.required]),
@@ -33,11 +32,9 @@ export class Tab3Component implements OnInit {
       });
   }
   ngOnInit() {
-    console.log("tab3", this.internshipInfo)
     this.correo = this.internshipInfo.correo;
     this.emailForm.controls['email_to'].setValue(this.correo);
     this.emailForm.controls['message'].setValue(this.mensaje);
-    console.log("tab3", this.emailForm.value)
   }
 
   ionViewDidLeave() {
