@@ -2,11 +2,8 @@ name: Build
 
 on:
   push:
-    branches: 
-      - main
-      
-  #Run workflow manually
-  workflow_dispatch:      
+    branches:    
+    - main
 
 jobs:
   build:
