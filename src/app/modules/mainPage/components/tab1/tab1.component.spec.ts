@@ -22,15 +22,7 @@ import { Tab3Component } from '../tab3/tab3.component';
 import { Tab1Component } from './tab1.component';
 
 describe('Tab1Component', () => {
-  describe("A suite is just a function", function() {
-    var a;
 
-    it("and so is a spec", function() {
-      a = true;
-
-      expect(a).toBe(true);
-    });
-  });
      let component: Tab1Component;
      let fixture: ComponentFixture<Tab1Component>;
     // let de: DebugElement;
@@ -73,6 +65,52 @@ describe('Tab1Component', () => {
       const fixture = TestBed.createComponent(Tab1Component);
       const app = fixture.debugElement.componentInstance;
       expect(app.chageVisivilidad(false)).toEqual(true);;
+    }));
+
+    it('El método ordena correctamente la lista de pasantias', async(() => {
+      const pasantia=[
+        {
+          "nombre": "UPB",
+          "area": "fsdfsfsdfsdf",
+          "date": {
+              "seconds": 1620693408,
+              "nanoseconds": 593000000
+          },
+          "correo": "ch.rash37@gmail.com",
+          "requisistos": "ngfngfnfgnfgn",
+          "empresa": "fgnfgnfgnfg",
+          "logo": "https://fee.upb.edu/wp-content/uploads/UPB-GE-color-03.png"
+      },
+        {
+          "correo": "ch.rash37@gmail.com",
+          "area": "sdfsdfdfsdf",
+          "requisistos": "dsfsdfdsfsdf",
+          "empresa": "dfgdfgfdgdfgdfg",
+          "date": {
+              "seconds": 1620691102,
+              "nanoseconds": 631000000
+          },
+          "nombre": "Amazon",
+          "logo": "https://logodownload.org/wp-content/uploads/2014/04/amazon-logo-2.png"
+      },{
+        "correo": "yukisaki1998@gmail.com",
+        "logo": "http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png",
+        "date": {
+            "seconds": 1620694072,
+            "nanoseconds": 102000000
+        },
+        "nombre": "Twitter",
+        "empresa": "fthfthtfh",
+        "requisistos": "fthfthfthft",
+        "area": "sdfsfsdfsd"
+    }
+
+    ]
+      const fixture = TestBed.createComponent(Tab1Component);
+      const app = fixture.debugElement.componentInstance;
+
+      const ordenada=pasantia.sort((a, b) => a.date.nanoseconds-b.date.nanoseconds);;
+      expect(ordenada[0].nombre).toEqual('Twitter');
     }));
     // beforeEach(() => {
     //     fixture = TestBed.createComponent(Tab1Component);
