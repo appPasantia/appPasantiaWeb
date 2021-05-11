@@ -61,6 +61,7 @@ export class Tab1Component implements OnInit {
       console.log('TOTAL', this.total);
     } else {
       this.pasantias.filter(s =>
+        s.area.includes(this.search.toLowerCase()) ? this.total.push(s) : '' ||
         s.nombre.includes(this.search.toLowerCase()) ? this.total.push(s) : ''
       );
       this.pasantias = this.total.filter(s => s.nombre);
