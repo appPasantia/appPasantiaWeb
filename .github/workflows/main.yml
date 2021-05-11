@@ -3,10 +3,7 @@ name: Build
 on:
   push:
     branches: [ main ]
-    
-  #Run workflow manually
-  workflow_dispatch:
-  
+
 jobs:
   build:
     name: Build
