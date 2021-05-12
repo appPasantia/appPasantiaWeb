@@ -47,30 +47,30 @@ describe('Tab3Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
 
-  it('Name check- Se deberia llenar el campo nombre', () => {
-    let name = component.postularForm.controls['nombre'];
-    name.setValue('Prueba');
-    expect(name.errors).toBeNull();
-    expect(name.valid).toBeTruthy();
-  });
+  // it('Name check- Se deberia llenar el campo nombre', () => {
+  //   let name = component.postularForm.controls['nombre'];
+  //   name.setValue('Prueba');
+  //   expect(name.errors).toBeNull();
+  //   expect(name.valid).toBeTruthy();
+  // });
 
-  it('Email check- El campo email deberia estar lleno', () => {
-    let correo = component.postularForm.controls['correo'];
-    correo.setValue('correoprueba@email.com');
-    expect(correo.errors).toBeNull();
-    expect(correo.valid).toBeTruthy();
-  });
+  // it('Email check- El campo email deberia estar lleno', () => {
+  //   let correo = component.postularForm.controls['correo'];
+  //   correo.setValue('correoprueba@email.com');
+  //   expect(correo.errors).toBeNull();
+  //   expect(correo.valid).toBeTruthy();
+  // });
 
-  it('Cellphone check- Se deberia llenar el campo telefono', () => {
-    let phone = component.postularForm.controls['telefono'];
-    phone.setValue('60109265');
-    expect(phone.errors).toBeNull();
-    expect(phone.valid).toBeTruthy();
-  });
+  // it('Cellphone check- Se deberia llenar el campo telefono', () => {
+  //   let phone = component.postularForm.controls['telefono'];
+  //   phone.setValue('60109265');
+  //   expect(phone.errors).toBeNull();
+  //   expect(phone.valid).toBeTruthy();
+  // });
 
   //TODO button check
 });
