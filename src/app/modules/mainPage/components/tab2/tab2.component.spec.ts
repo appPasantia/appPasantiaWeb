@@ -137,6 +137,32 @@ describe('Tab2Component', () => {
   });
 
 
+  it('[Form-Submit]- Verifica si el boton añadió ', () => {
+    //checkform invalido
+    expect(component.loginForm.invalid).toBeTruthy();
+    let btn = fixture.debugElement.query(By.css('.botonpublicar'));
+    //check boton esta inhabilitado
+    expect(btn.nativeElement.disabled).toBeTruthy();
+
+    component.loginForm.controls['nombre'].setValue('nombre123');
+    component.loginForm.controls['empresa'].setValue('empresa222');
+    component.loginForm.controls['requisistos'].setValue('requisistos123');
+    component.loginForm.controls['correo'].setValue('loro@gmail.com');
+    component.loginForm.controls['area'].setValue('nombre123');
+    component.loginForm.controls['logo'].setValue('nombrdwaae123');
+    fixture.detectChanges();
+    //ver el boton si esta enabled
+    expect(btn.nativeElement.disabled).toBeFalsy();
+
+    component.guardarPasantia();
+    fixture.detectChanges();
+
+
+
+
+  });
+
+
 
 
 });
