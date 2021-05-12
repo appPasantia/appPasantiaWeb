@@ -28,7 +28,6 @@ export class Tab3Component implements OnInit {
       email_to: new FormControl({value:'', disabled: true},[Validators.required]),
       phone: new FormControl('',[Validators.required]),
       message: new FormControl({value:'', disabled: true},[Validators.required]),
-
       });
   }
   ngOnInit() {
