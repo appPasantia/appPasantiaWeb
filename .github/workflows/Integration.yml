@@ -1,0 +1,17 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: node_module instalation
+        run: npm install
+      - name: angular cli instalation
+        run: npm install -g @angular/cli
+      - name: Build
+        run: ng build
