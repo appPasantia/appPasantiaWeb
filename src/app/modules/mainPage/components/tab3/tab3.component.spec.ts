@@ -71,4 +71,6 @@ describe('Tab3Component', () => {
     expect(phone.errors).toBeNull();
     expect(phone.valid).toBeTruthy();
   });
+
+  //TODO button check
 });
