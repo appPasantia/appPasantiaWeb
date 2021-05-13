@@ -4,35 +4,55 @@ import { UploadService } from 'src/app/shared/services/upload.service';
 
 @Component({
   selector: 'app-file-upload',
-  templateUrl: './file-upload.component.html',
+  template: `<form class="contact-form" (submit)="sendEmail($event)">
+  <div>
+    <label position="stacked">Nombre</label>
+    <input type="text" name="to_name" value="{{nombre}}" required>
+  </div>
+
+  <div>
+    <label position="stacked">Correo empresa</label>
+    <input type="email" name="email_to" value="{{correo}}" required>
+  </div>
+  <div>
+    <label position="stacked">Telefono</label>
+    <input type="number" name="phone" value="{{telefono}}" required>
+  </div>
+  <div>
+    <label position="stacked">Mensage</label>
+    <textarea type="number" name="message" value="{{mensaje}}" required></textarea>
+  </div>
+  <button class="center" mode="ios" size="small" color="dark" type="submit" value="Enviar postulacion">Enviar
+    postulacion</button>
+</form>`,
   styleUrls: ['./file-upload.component.scss']
 })
 export class FileUploadComponent implements OnInit {
-  ngOnInit() {}
+  ngOnInit() { }
 
   barStatus = false;
   fileUpload = [];
   @Input() correo: string = '';
-  nombre='';
+  nombre = '';
   //correo='ch.rash37@gmail.com';
-  telefono:number;
-  postularForm:FormGroup;
-  mensaje='Hay una nueva postulación a su pasantía';
+  telefono: number;
+  postularForm: FormGroup;
+  mensaje = 'Hay una nueva postulación a su pasantía';
   constructor(/*private emailComposer: EmailComposer,*/private firebaseUploadService: UploadService) { }
 
 
-  uploadFile(event){
+  uploadFile(event) {
     this.barStatus = true;
-    this.firebaseUploadService.storeFile(event.target.files[0]).then((res:any)=>{
-      if(res){
+    this.firebaseUploadService.storeFile(event.target.files[0]).then((res: any) => {
+      if (res) {
         this.barStatus = false;
         this.fileUpload.unshift(res);
         alert("Se mando tu curriculum, Exitos!")
       }
     },
-    (error:any) => {
-      this.barStatus = false;
-    }
+      (error: any) => {
+        this.barStatus = false;
+      }
     )
   }
   enviar() {
@@ -60,9 +80,9 @@ export class FileUploadComponent implements OnInit {
         console.log(error.text);
       });*/
   }
-  ionViewDidLeave(){
-    this.nombre='';
-    this.telefono=null;
+  ionViewDidLeave() {
+    this.nombre = '';
+    this.telefono = null;
   }
 
 }

@@ -23,27 +23,27 @@ describe('Tab3Component', () => {
   let fixture: ComponentFixture<Tab3Component>;
 
   const routes: Routes = [
-   { path: "", component: MainPageComponent },
- ];
+    { path: "", component: MainPageComponent },
+  ];
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Tab3Component, MainPageComponent],
-      imports:[AngularFireModule.initializeApp(environment.firebaseConfig),
-       AngularFireAuthModule,
-               CommonModule,
-               RouterModule.forChild(routes),
-               ReactiveFormsModule,
-               MatButtonModule,
-               MatIconModule,
-               MatFormFieldModule,
-               MatInputModule,
-               NgxSkeletonLoaderModule,
-               RouterTestingModule,
-               AvatarModule,
-               FormsModule,
-               BrowserAnimationsModule]
+      declarations: [Tab3Component, MainPageComponent],
+      imports: [AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
+        CommonModule,
+      RouterModule.forChild(routes),
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        NgxSkeletonLoaderModule,
+        RouterTestingModule,
+        AvatarModule,
+        FormsModule,
+        BrowserAnimationsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -56,7 +56,7 @@ describe('Tab3Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', ()=> {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 

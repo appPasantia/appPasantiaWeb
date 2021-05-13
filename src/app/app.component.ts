@@ -3,13 +3,13 @@ import firebase from "firebase/app";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `<router-outlet></router-outlet>`,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
   title = 'pasantia';
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     try {
       firebase.analytics().logEvent('Someone has enter to the page');
       console.log('success');

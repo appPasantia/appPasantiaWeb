@@ -21,41 +21,41 @@ import { MainPageComponent } from '../../mainPage.component';
 
 
 describe('Tab2Component', () => {
-   let component: Tab2Component;
-   let fixture: ComponentFixture<Tab2Component>;
-   const routes: Routes = [
+  let component: Tab2Component;
+  let fixture: ComponentFixture<Tab2Component>;
+  const routes: Routes = [
     { path: "", component: MainPageComponent },
   ];
-   beforeEach(async(() => {
-     TestBed.configureTestingModule({
-       declarations: [ Tab2Component ],
-       imports:[AngularFireModule.initializeApp(environment.firebaseConfig),
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [Tab2Component],
+      imports: [AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
-                CommonModule,
-                RouterModule.forChild(routes),
-                ReactiveFormsModule,
-                MatButtonModule,
-                MatIconModule,
-                MatFormFieldModule,
-                MatInputModule,
-                NgxSkeletonLoaderModule,
-                RouterTestingModule,
-                AvatarModule]
-     })
-     .compileComponents();
-   }));
+        CommonModule,
+      RouterModule.forChild(routes),
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        NgxSkeletonLoaderModule,
+        RouterTestingModule,
+        AvatarModule]
+    })
+      .compileComponents();
+  }));
 
-   beforeEach(() => {
-     fixture = TestBed.createComponent(Tab2Component);
-     component = fixture.componentInstance;
-     fixture.detectChanges();
-   });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(Tab2Component);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-   it('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
-   });
+  });
 
-   it('E mail check- No deberia ver si el correo es valido', () => {
+  it('E mail check- No deberia ver si el correo es valido', () => {
     let email = component.loginForm.controls['correo'];
     expect(email.valid).toBeFalsy();
     expect(email.pristine).toBeTruthy();

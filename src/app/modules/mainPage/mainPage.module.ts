@@ -6,9 +6,9 @@ import { Tab1Component } from './components/tab1/tab1.component';
 import { Tab3Component } from './components/tab3/tab3.component';
 import { Tab2Component } from './components/tab2/tab2.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';;
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';;
 import { MatInputModule } from '@angular/material/input';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 

@@ -54,11 +54,10 @@ body {
   }
 }
 
-.legend:hover{
+.legend:hover {
   color: #1883ba;
   background-color: #28af82;
 }
-
 
 .wrapper {
   display: flex;
@@ -68,24 +67,15 @@ body {
 
   padding: 60px;
   background-image: url(/../../../assets/img/fondo.png);
-  }
+}
 
-  body {
-    font-family: "Open Sans", sans-serif;
-    height: 100vh;
-    background-size: cover;
-  }
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  background-size: cover;
+}
 
-
-
-
-
-
-
-
-
-
-  /**
+/**
 * Template Name: SOS AGRO - v2.1.0
 * Template URL: https://bootstrapmade.com/SOS AGRO -free-bootstrap-landing-page-template/
 * Author: BootstrapMade.com
@@ -101,7 +91,7 @@ body {
 }
 
 a {
-    color: #1acc8d;
+  color: #1acc8d;
 }
 
 a:hover {
@@ -109,11 +99,14 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Montserrat", sans-serif;
 }
-
-
 
 /* Mobile Navigation */
 .mobile-nav-toggle {
@@ -166,7 +159,9 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+.mobile-nav a:hover,
+.mobile-nav .active > a,
+.mobile-nav li:hover > a {
   color: #343a40;
   text-decoration: none;
 }
@@ -225,7 +220,6 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-
 
 #hero:before {
   content: "";
@@ -450,7 +444,7 @@ section {
   width: 120px;
   height: 1px;
   display: inline-block;
-  background: #0968DC;
+  background: #0968dc;
   margin: 4px 10px;
 }
 
@@ -461,14 +455,14 @@ section {
   font-weight: 700;
 
   font-family: "Poppins", sans-serif;
-  color: #0968DC;
+  color: #0968dc;
 }
 
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
 
-.centerright{
+.centerright {
   margin-left: 13%;
 }
 .about {
@@ -534,12 +528,10 @@ section {
   font-size: 14px;
 }
 
-
-
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(#0968DC 50%, rgba(9, 94, 200, 0.4) 52%);
+  background: radial-gradient(#0968dc 50%, rgba(9, 94, 200, 0.4) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -549,7 +541,7 @@ section {
 }
 
 .about .play-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
@@ -564,7 +556,7 @@ section {
 }
 
 .about .play-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 120px;
   height: 120px;
@@ -587,12 +579,12 @@ section {
 }
 
 .about .play-btn:hover::after {
-  border-left: 15px solid #0968DC;
+  border-left: 15px solid #0968dc;
   transform: scale(20);
 }
 
 .about .play-btn:hover::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
@@ -630,4 +622,3 @@ section {
     opacity: 0;
   }
 }
-

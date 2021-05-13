@@ -7,7 +7,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 export class UploadService {
   location = 'uploads/';
 
-  constructor(private angularFireStorage: AngularFireStorage) {}
+  constructor(private angularFireStorage: AngularFireStorage) { }
 
   fileName() {
     const newTime = Math.floor(Date.now() / 1000);
@@ -31,6 +31,6 @@ export class UploadService {
             reject(error);
           });
       });
-    } catch (e) {}
+    } catch (e) { }
   }
 }
