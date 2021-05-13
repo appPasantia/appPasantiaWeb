@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-  <title>Pasantias</title>
+  <title>Pasantías Web</title>
   <meta
       content="Hacemos simple el contacto humano entre empresas y estudiantes. Descarga nuestra app movil para android e iOS."
       name="description">
