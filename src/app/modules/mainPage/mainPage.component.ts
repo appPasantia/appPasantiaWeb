@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import firebase from "firebase/app";
 
 @Component({
   selector: 'app-mainPage',
@@ -41,5 +42,17 @@ export class MainPageComponent implements OnInit {
 
   changeToTab1(){
     this.showComponent(1);
+  }
+
+  ngAfterViewInit(){
+    try {
+      firebase.analytics().logEvent('WebPage has been used',{
+        'userName': this.actualUser.displayName,
+        'email': this.actualUser.email
+      });
+      console.log('success');
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

@@ -12,6 +12,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from "@angular/forms";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 
+
+import firebase from "firebase/app";
+firebase.initializeApp(environment.firebaseConfig);
+
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
   {
