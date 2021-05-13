@@ -25,7 +25,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
           <div class="centerright">
               <div class="col-lg-7 pt-5 pt-lg-0 order-2 d-flex align-items-center">
                   <div data-aos="zoom-out align-items-center">
-                      <h1> Pasantias <span>Únete Ya!</span></h1>
+                      <h1> ¡Pasantias <span>Únete Ya!</span></h1>
                       <h2>Hacemos simple el contacto humano entre empresas y estudiantes.
                       </h2>
                       <div class="text-center text-lg-left">
